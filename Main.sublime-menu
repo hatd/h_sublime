@@ -1,0 +1,47 @@
+[
+  {
+    "id": "preferences",
+    "children":
+    [
+      {
+        "caption": "Package Settings",
+        "mnemonic": "P",
+        "id": "package-settings",
+        "children":
+        [
+          {
+            "caption": "H Sublime",
+            "children":
+            [
+              {
+                "caption": "Settings",
+                "command": "edit_settings",
+                "args": {
+                  "base_file": "${packages}/h_sublime/h_sublime.sublime-settings",
+                  "default": "// Settings in here override those in \"h_sublime.sublime-settings\"\n\n{\n\t\"copy_permalink\": {\n\t\t\"<repository_name>\": {\n\t\t\t\"branch\": \"main\",\n\t\t\t\"remote_name\": \"origin\"\n\t\t}\n\t}\n}\n"
+                }
+              },
+              { "caption": "-" },
+              {
+                "caption": "Key Bindings",
+                "command": "edit_settings",
+                "args": {
+                  "base_file": "${packages}/h_sublime/Default (${platform}).sublime-keymap",
+                  "default": "// Key Bindings - User\n[\n\t$0\n]\n"
+                }
+              },
+              { "caption": "-" },
+              {
+                "command": "open_file",
+                "args": {
+                  "file": "${packages}/h_sublime/README.md"
+                },
+                "caption": "Help"
+              },
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

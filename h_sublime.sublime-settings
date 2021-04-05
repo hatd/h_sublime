@@ -1,0 +1,12 @@
+{
+  "copy_permalink": {
+    "<repository_name1>": {
+      "branch": "main",
+      "remote_name": "origin"
+    },
+    "<repository_name2>": {
+      "branch": "main",
+      "remote_name": "origin"
+    }
+  }
+}
