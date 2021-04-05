@@ -9,7 +9,7 @@ Something useful to me
 2. Add repository: `Ctrl+Shift+P` and search *Package Control: Add Repository*. Parse *https://github.com/hatd/h_sublime* and `enter`
 3. Install package: `Ctrl+Shift+P` and search *Package Control: Install Package*. Search `h_sublime` and `enter`
 
-## Feature
+## Feature list
 
 ### 1. Copy premalink
 
