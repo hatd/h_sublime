@@ -12,7 +12,13 @@ Something useful to me
 ## Feature
 
 ### 1. Copy premalink
-- like [this feature](https://docs.github.com/en/github/managing-your-work-on-github/creating-a-permanent-link-to-a-code-snippet) on web github
-- key binding: `alt + c`
 
-NOTE: before use, please change setting, follow `Preference` > `Package Settings` > `H Sublime` > `Settings` to add remote name and branch.
+- **Description**: like [this feature](https://docs.github.com/en/github/managing-your-work-on-github/creating-a-permanent-link-to-a-code-snippet) on web github
+- **Use**: select 1 or multi line and press `alt + c`(can change in `Preference` > `Package Settings` > `H Sublime` > `Key Bindings`), permalink will be copied to clipboard
+
+**NOTE**: before use, please change setting, follow `Preference` > `Package Settings` > `H Sublime` > `Settings` to add remote name and branch.
+
+### 2. Convert Text
+
+- **Description**: upcase, downcase, camelcase, snakecase
+- **Use**: select text, and right-click
