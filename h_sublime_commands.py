@@ -20,7 +20,7 @@ class CopyPermalinkCommand(sublime_plugin.TextCommand):
     top_level = subprocess.Popen(top_level_cmd, **kwargs).stdout.read().decode("utf-8")[:-1]
     kwargs["cwd"] = top_level
 
-    branch, remote_name = CopyPermalinkCommand.check_setting(top_level)
+    branch, remote_name = self.check_setting(top_level)
 
     if branch:
       remote_url = subprocess.Popen(["git", "config", "--get", "remote." + remote_name + ".url"], **kwargs).stdout.read()
@@ -37,7 +37,7 @@ class CopyPermalinkCommand(sublime_plugin.TextCommand):
       else:
         sublime.set_clipboard("khong tim thay remote: " + remote_name)
 
-  def check_setting(top_level):
+  def check_setting(self, top_level):
     repository = top_level.split("/")[-1]
     try:
       if repository:
@@ -53,3 +53,37 @@ class CopyPermalinkCommand(sublime_plugin.TextCommand):
     except AttributeError:
       sublime.set_clipboard("setting truoc khi su dung tinh nang copy_permalink")
       return [False, False]
+
+class UpcaseCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    region = self.view.sel()[0]
+    selected = self.view.substr(region)
+
+    self.view.replace(edit, region, selected.upper())
+
+class DowncaseCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    region = self.view.sel()[0]
+    selected = self.view.substr(region)
+
+    self.view.replace(edit, region, selected.lower())
+
+class CamelcaseCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    region = self.view.sel()[0]
+    selected = self.view.substr(region)
+
+    CamelText = ''.join(word.title() for word in selected.split('_'))
+
+    self.view.replace(edit, region, CamelText)
+
+class SnakecaseCommand(sublime_plugin.TextCommand):
+  def run(self, edit):
+    region = self.view.sel()[0]
+    selected = self.view.substr(region)
+
+    pattern = re.compile(r'(?<!^)(?=[A-Z])')
+    snake_text = pattern.sub('_', selected).lower()
+
+    self.view.replace(edit, region, snake_text)
+    "aaaa_aaa"

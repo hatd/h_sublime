@@ -1,0 +1,8 @@
+[
+  { "caption": "-", "id": "clipboard" },
+  { "caption": "-" },
+  { "caption": "Upcase", "command": "upcase" },
+  { "caption": "Downcase", "command": "downcase" },
+  { "caption": "Camelcase", "command": "camelcase" },
+  { "caption": "Snakecase", "command": "snakecase" },
+]
