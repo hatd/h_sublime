@@ -4,9 +4,6 @@ import sublime_plugin
 import subprocess
 import re
 
-SETTINGS = sublime.load_settings("h_sublime.sublime-settings")
-DEFAULT_SETTINGS = {"remote": "origin", "branch": "main"}
-
 class CopyPermalinkCommand(sublime_plugin.TextCommand):
   def run(self, edit):
     file_name = self.view.file_name()
@@ -41,7 +38,7 @@ class CopyPermalinkCommand(sublime_plugin.TextCommand):
     repository = top_level.split("/")[-1]
     try:
       if repository:
-        repository_settings = SETTINGS.get("copy_permalink").get(repository)
+        repository_settings = sublime.load_settings("h_sublime.sublime-settings").get("copy_permalink").get(repository)
         if repository_settings:
           return [repository_settings["branch"], repository_settings["remote_name"]]
         else:
