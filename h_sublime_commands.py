@@ -45,13 +45,13 @@ class CopyPermalinkCommand(sublime_plugin.TextCommand):
         if repository_settings:
           return [repository_settings["branch"], repository_settings["remote_name"]]
         else:
-          sublime.set_clipboard("setting truoc khi su dung tinh nang copy_permalink")
+          sublime.set_clipboard("48:setting truoc khi su dung tinh nang copy_permalink")
         return [False, False]
       else:
         sublime.set_clipboard("co loi khi parse repository")
         return [False, False]
     except AttributeError:
-      sublime.set_clipboard("setting truoc khi su dung tinh nang copy_permalink")
+      sublime.set_clipboard("54:setting truoc khi su dung tinh nang copy_permalink")
       return [False, False]
 
 class UpcaseCommand(sublime_plugin.TextCommand):
